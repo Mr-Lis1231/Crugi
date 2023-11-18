@@ -12,7 +12,7 @@ class Example(QWidget):
 
     def initUI(self):
         self.setGeometry(300, 300, 200, 200)
-        self.setWindowTitle('Желтые круги')
+        self.setWindowTitle('Разные круги')
         self.btn = QPushButton('Рисовать', self)
         self.btn.move(70, 150)
         self.btn.resize(60, 40)
@@ -32,7 +32,10 @@ class Example(QWidget):
 
     def drawflag(self, qp):
         a = random.randint(10, 100)
-        qp.setBrush(QColor(255, 255, 0))
+        r = random.randint(0,255)
+        g = random.randint(0,255)
+        b = random.randint(0,255)
+        qp.setBrush(QColor(r, g, b))
         qp.drawEllipse(random.randint(0, 200), random.randint(0, 200), a, a)
 
 
